@@ -8,13 +8,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">MyBlog</a>
+      <%= link_to 'MyBlog', posts_path, class: "navbar-brand" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">トップページ</a></li>
+        <li><%= link_to 'トップページ', posts_path %></li>
         <li><a href="#">新規投稿</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
