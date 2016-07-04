@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   def index
+    @posts = Post.all.order(created_at: :desc)
+    @new_posts = Post.find_newest_article
   end
 
   def new
