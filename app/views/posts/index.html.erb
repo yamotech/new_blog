@@ -14,10 +14,11 @@
 
   <div class="col-md-4">
     <div class="thumbnail">
-      <img src="#" alt="著者イメージ">
+      <% author = Author.first %>
+      <%= image_tag author.image_url %>
       <div class="caption">
-        <h3>著者名</h3>
-        <p>著者詳細</p>
+        <h3>著者名:<%= author.name %></h3>
+        <p>著者詳細:<%= author.description %></p>
       </div>
     </div>
 
