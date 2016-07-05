@@ -18,8 +18,13 @@
         <li><%= link_to '新規投稿', new_post_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">サインアップ</a></li>
-        <li><a href="#">ログイン</a></li>
+        <% if author_signed_in? %>
+          <li><%= link_to '設定変更', edit_author_registration_path %></li>
+          <li><%= link_to 'ログアウト', destroy_author_session_path, method: :delete, data: { confirm: 'ログアウトしますか？'} %></li>
+        <% else %>
+          <li><%= link_to 'サインアップ', new_author_registration_path %></li>
+          <li><%= link_to 'ログイン', new_author_session_path %></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
