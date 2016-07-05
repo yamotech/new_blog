@@ -6,8 +6,26 @@
       <%= devise_error_messages! %>
 
       <div class="form-group">
+        <%= f.label :name, "名前" %><br />
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
         <%= f.label :email, "電子メール" %><br />
         <%= f.email_field :email, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :description, "詳細" %><br />
+        <%= f.text_field :description, class: "form-control" %>
+      </div>
+
+      <p>現在設定されている画像</p>
+      <%= image_tag current_author.image_url, class: "img-rounded", width: 200 %>
+
+      <div class="form-group">
+        <%= f.label :image_url, "プロフィール画像" %><br />
+        <%= f.text_field :image_url, class: "form-control" %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
