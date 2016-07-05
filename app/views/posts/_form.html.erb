@@ -18,11 +18,11 @@
   </div>
   <div class="form-group">
     <%= f.label "カテゴリ" %>
-    <%= f.text_field :category, class: "form-control" %>
+    <%= f.collection_select(:category_id, Category.all, :id, :title, class: "form-control") %>
   </div>
   <div class="form-group">
     <%= f.label "本文" %>
     <%= f.text_area :body, class: "form-control" %>
   </div>
-  <%= f.submit class: "btn btn-primary" %>
+  <%= f.submit '登録する', class: "btn btn-primary" %>
 <% end %>
