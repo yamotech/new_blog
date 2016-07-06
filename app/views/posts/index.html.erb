@@ -1,5 +1,15 @@
 <div class="row">
   <div class="col-md-8">
+
+    <form class="form-inline">
+      <div class="form-group">
+        <%= search_form_for @q do |f| %>
+          <%= f.search_field :title_or_body_cont, placeholder: "タイトルか本文を検索", class: "form-control" %>
+      </div>
+          <%= f.submit "検索", class: "btn btn-primary" %>
+        <% end %>
+    </form>
+
     <% @posts.each do |post| %>
       <div class="article">
         <h2><%= post.title %></h2>
