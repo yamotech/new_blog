@@ -5,6 +5,7 @@ class PostsController < ApplicationController
     @q = Post.order(created_at: :desc).ransack(params[:q])
     @posts = @q.result.page(params[:page]).per(10)
     @new_posts = Post.find_newest_article
+    @new_comments = Comment.find_newest_comment
   end
 
   def new

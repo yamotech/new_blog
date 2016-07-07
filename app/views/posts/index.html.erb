@@ -38,5 +38,12 @@
         <%= link_to post.title, post, class: "list-group-item" %>
       <% end %>
     </div>
+
+    <h3>最新コメント一覧</h3>
+    <div class="list-group">
+      <% @new_comments.each do |comment| %>
+        <%= link_to comment.body, comment, class: "list-group-item" %>
+      <% end %>
+    </div>
   </div>
 </div>
