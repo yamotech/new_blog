@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_author!, only: [ :create, :edit, :update, :destroy ]
+
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
