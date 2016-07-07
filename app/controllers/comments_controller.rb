@@ -21,6 +21,13 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    post_id = @comment.post_id
+    @comment.destroy
+    redirect_to post_url(post_id), alert: "コメントを削除しました"
+  end
+
   private
 
   def comment_params
