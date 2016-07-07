@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
   belongs_to :category
+  has_many :comments, dependent: :destroy
 
   scope :find_newest_article, -> { order(created_at: :desc).limit(5) }
 
