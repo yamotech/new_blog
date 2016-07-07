@@ -4,7 +4,6 @@ class PostsController < ApplicationController
   def index
     @q = Post.order(created_at: :desc).ransack(params[:q])
     @posts = @q.result.page(params[:page]).per(10)
-
     @new_posts = Post.find_newest_article
   end
 
@@ -14,6 +13,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
   end
 
   def create
